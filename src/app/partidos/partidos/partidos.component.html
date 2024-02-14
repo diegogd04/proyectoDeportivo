@@ -1,0 +1,21 @@
+<app-partidos-menu></app-partidos-menu>
+<div class="float-right w-75">
+  <form class="d-flex mt-5 ml-3 mr-5">
+    <button class="btn" type="submit">
+      <img src="../../../assets/img/ic_search.svg">
+    </button>
+    <input type="search" placeholder="Buscar" class="form-control">
+  </form>
+  <button *ngFor="let partido of partidos" [routerLink]="['partidos/partidos-detail', partido?.id]"
+    (click)="selectPartido(partido)" class="d-flex m-4 btn">
+    <img src="../../../assets/img/ic_calendar.svg" width="50dp">
+    <h2 class="d-flex mt-2">
+      <h3 class="mr-5">
+        {{partido?.fecha}}
+      </h3>
+      <h3 class="ml-5">
+        {{partido?.nombre}}
+      </h3>
+    </h2>
+  </button>
+</div>
